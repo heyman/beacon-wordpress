@@ -1,0 +1,9 @@
+#beaconCommentNotice {
+    padding: 10px;
+    background: #ffc;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+#beaconCommentCount {
+    font-weight: bold;
+}
