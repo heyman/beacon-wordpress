@@ -20,3 +20,6 @@ Visitors will get real-time notifications when comments are posted to blog posts
 2. Activate the plugin through the 'Plugins' menu in WordPress admin
 3. Go to the 'Beacon Settings' page in the WordPress admin, and enter your Beacon API key and your Beacon Secret Key.
 4. Done!
+
+== Author ==
+Created by Jonatan Heyman (http://heyman.info)
