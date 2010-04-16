@@ -3,6 +3,7 @@ Contributors: jonatanheyman
 Tags: beacon, comments, real-time, realtime, orbited
 Requires at least: 2.9.2
 Tested up to: 2.9.2
+Stable tag: trunk
 
 Provides real-time notifications of comments through the real-time cloud service Beacon (http://beacon-api.com/).
 
