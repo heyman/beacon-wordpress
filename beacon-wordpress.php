@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Beacon Wordpress Plugin
-Plugin URI: http://beacon-api.com/
+Plugin URI: http://github.com/heyman/beacon-wordpress
 Description: Provides real-time notifications of comments through the real-time cloud service Beacon (http://beacon-api.com/).
 Author: Jonatan Heyman
 Version: 0.9
