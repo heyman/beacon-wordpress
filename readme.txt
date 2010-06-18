@@ -5,14 +5,12 @@ Requires at least: 2.9.2
 Tested up to: 2.9.2
 Stable tag: trunk
 
-Provides real-time notifications of comments through the real-time cloud service Beacon (http://beacon-api.com/).
+Provides real-time notifications of comments through the real-time cloud service Beacon (http://beaconpush.com/).
 
 == Description ==
 
-Provides real-time notifications of comments through the real-time cloud service Beacon (http://beacon-api.com/).
+Provides real-time notifications of comments through the real-time cloud service Beacon (http://beaconpush.com/).
 Visitors will get real-time notifications when comments are posted to blog posts that they are reading.
-
-* Requires PHP's 'http' module.
 
 == Installation ==
 

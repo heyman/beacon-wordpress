@@ -1,7 +1,7 @@
 BeaconWordpressPlugin = {
  onNewPost: function(post) {
 	// don't show post if we posted it ourself
-	if (post.beacon_user == ESN.Beacon.credentials.user)
+	if (post.beacon_user == Beacon.options.user)
 	    return;
 	
 	var container = jQuery(".commentlist");

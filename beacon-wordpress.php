@@ -4,12 +4,13 @@ Plugin Name: Beacon Wordpress Plugin
 Plugin URI: http://github.com/heyman/beacon-wordpress
 Description: Provides real-time notifications of comments through the real-time cloud service Beacon (http://beacon-api.com/).
 Author: Jonatan Heyman
-Version: 0.9
+Version: 0.91
 Author URI: http://heyman.info/
 */
 
 session_start();
 
+require_once('HttpClient.class.php');
 require_once('beacon-options.php');
 
 function beacon_is_configured() {
@@ -21,21 +22,11 @@ function beacon_is_configured() {
     return true;
 }
 
-function beacon_generate_token($user, $secret_key, $expire_time=null) {
-    if ($expire_time == null)
-	$expire_time = time() + (3600 * 24 * 30);
-
-    $payload = $user . "," . $expire_time;
-    $signature = hash_hmac("sha1", $payload, $secret_key);
-    return $payload . "," . $signature;
-}
-
 function beacon_send_message($channel, $data) {
-    $url = 'http://beacon-api.com/api/v1/' . get_option('beacon_api_key') . '/channels/' . $channel;
-    $req = new HttpRequest($url, HttpRequest::METH_POST);
-    $req->setRawPostData(json_encode($data));
-    $req->addHeaders(array('X-Beacon-Secret-Key' => get_option('beacon_secret_key')));
-    $result = $req->send();
+    $url = '/1.0.0/' . get_option('beacon_api_key') . '/channels/' . $channel;
+    $client = new HttpClient('api.beaconpush.com');
+    $client->extra_request_headers = array('X-Beacon-Secret-Key: ' . get_option('beacon_secret_key'));
+    $client->post($url, json_encode($data));
 }
 
 function beacon_init() {
@@ -64,27 +55,18 @@ function beacon_submit_comment($comment_id) {
 }
 
 function beacon_inject_js() {
-    global $post;
-    if ($post->post_type != 'post')
-	return;
-    
     // session id based username
     $user = "user_" . session_id();
     
-    echo '
-        <script id="orbitClientScript" type="text/javascript" src="http://beacon-api.com/client/client.js?embed=false"></script>
+    print('
+        <script type="text/javascript" src="http://beaconpush.com/1.0.0/client.js"></script>
         <script type="text/javascript">
-            ESN.Beacon.credentials.user = "' . $user . '";
-            ESN.Beacon.credentials.sphere = "' . get_option('beacon_api_key') . '";
-            ESN.Beacon.credentials.token = "' . beacon_generate_token($user, get_option('beacon_secret_key')) . '";
-            ESN.Beacon.credentials.channels = ["post_' . $post->ID . '"];
-        
-            ESN.Beacon.callbacks.onMessage = function (data) {
+            Beacon.connect("' . get_option('beacon_api_key') . '", ["post_'); the_ID(); print('"], {log: true, user: "' . $user . '"});
+            Beacon.listen(function(data){
                 BeaconWordpressPlugin.onNewPost(data);
-            }
-            ESN.Beacon.embed();
+            });
         </script>
-    ';
+    ');
 }
 
 if (beacon_is_configured()) {
