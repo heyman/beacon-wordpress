@@ -4,7 +4,7 @@ Plugin Name: Beacon Wordpress Plugin
 Plugin URI: http://github.com/heyman/beacon-wordpress
 Description: Provides real-time notifications of comments through the real-time cloud service Beacon (http://beacon-api.com/).
 Author: Jonatan Heyman
-Version: 0.91
+Version: 0.92
 Author URI: http://heyman.info/
 */
 
@@ -59,7 +59,7 @@ function beacon_inject_js() {
     $user = "user_" . session_id();
     
     print('
-        <script type="text/javascript" src="http://beaconpush.com/1.0.0/client.js"></script>
+        <script type="text/javascript" src="http://beaconpush.com/1/client.js"></script>
         <script type="text/javascript">
             Beacon.connect("' . get_option('beacon_api_key') . '", ["post_'); the_ID(); print('"], {log: true, user: "' . $user . '"});
             Beacon.listen(function(data){
