@@ -1,6 +1,7 @@
 === Beacon Wordpress Plugin ===
 
-<b>Since the Beacon Push is no longer available this plugin is now pretty much obsolete</b>
+NOTE: Since the Beacon Push is no longer available this plugin is now pretty much obsolete.
+
 
 Contributors: jonatanheyman
 Tags: beacon, comments, real-time, realtime, orbited
