@@ -41,4 +41,5 @@ http://www.sis-index.se/site-information/11790
 http://www.sis-index.se/site-information/11791
 http://www.sis-index.se/site-information/11792
 http://www.sis-index.se/site-information/11793
-
+http://www.sis-index.se/site-information/11794
+http://www.sis-index.se/site-information/11795
