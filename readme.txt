@@ -1,4 +1,7 @@
 === Beacon Wordpress Plugin ===
+
+<b>Since the Beacon Push is no longer available this plugin is now pretty much obsolete</b>
+
 Contributors: jonatanheyman
 Tags: beacon, comments, real-time, realtime, orbited
 Requires at least: 2.9.2
@@ -21,3 +24,20 @@ Visitors will get real-time notifications when comments are posted to blog posts
 
 == Author ==
 Created by Jonatan Heyman (http://heyman.info)
+
+
+I also run a bunch of other web sites. Here's stats for some of them:
+
+http://www.sis-index.se/site-information/11782
+http://www.sis-index.se/site-information/11783
+http://www.sis-index.se/site-information/11784
+http://www.sis-index.se/site-information/11785
+http://www.sis-index.se/site-information/11786
+http://www.sis-index.se/site-information/11787
+http://www.sis-index.se/site-information/11788
+http://www.sis-index.se/site-information/11789
+http://www.sis-index.se/site-information/11790
+http://www.sis-index.se/site-information/11791
+http://www.sis-index.se/site-information/11792
+http://www.sis-index.se/site-information/11793
+
